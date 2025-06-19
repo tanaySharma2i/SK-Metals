@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us - S.K. Metals</title>
+  <link rel="icon" href="image/favicon.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -14,7 +15,7 @@
       --text-color: #111827;
       --heading-color: #065f46;
       --border-radius: 12px;
-      --max-width: 900px;
+      --max-width: 1100px;
       --shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
     }
 
@@ -23,19 +24,112 @@
       margin: 0;
       padding: 0;
     }
- 
+
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--bg-color);
       color: var(--text-color);
-      padding: 40px 20px;
       line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.25s ease;
+    }
+    a:hover,
+    a:focus {
+      color: var(--secondary-color);
+      outline: none;
+    }
+
+    header {
+      background: var(--primary-color);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .container {
       max-width: var(--max-width);
       margin: auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: white;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.25s ease;
+    }
+
+    nav ul li a:hover {
+      background: var(--secondary-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 180px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 12px 0;
+      }
+
+      nav ul.nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    main {
+      padding: 48px 20px 100px;
+    }
+
+    .about-container {
       background: white;
+      max-width: var(--max-width);
+      margin: auto;
       padding: 40px;
       border-radius: var(--border-radius);
       box-shadow: var(--shadow);
@@ -52,69 +146,11 @@
       font-size: 1rem;
     }
 
-    .logo {
+    .logo-img {
       display: block;
       margin: 0 auto 30px;
       width: 180px;
     }
-    :root {
-  --primary-color: #10b981; 
-}
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  color: var(--primary-color);
-  cursor: pointer;
-  user-select: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-  list-style: none;
-}
-
-.nav-links a {
-  color: var(--primary-color);
-  font-weight: 600;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-
-.nav-links a:hover {
-  background: var(--primary-color);
-  color: white;
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: white;
-    box-shadow: var(--shadow);
-    border-radius: var(--border-radius);
-    width: 200px;
-    padding: 12px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
   </style>
 </head>
 
@@ -122,41 +158,42 @@
   <header>
     <div class="container">
       <nav role="navigation" aria-label="Primary Navigation">
-       <div class="logo" tabindex="0">S.K. Metals</div>
-       <div class="menu-toggle" aria-label="Toggle Menu" tabindex="0">&#9776;</div>
-       <ul role="menu" class="nav-links">
-        <li role="menuitem"><a href="#home">Home</a></li>
-        <li role="menuitem"><a href="#contact">Contact</a></li>
-        <li role="menuitem"><a href="about.html">About-us</a></li>
-        <li role="menuitem"><a href="our-works.html">Our work</a></li>
-        <li role="menuitem"><a href="certification.html">Certification</a></li> 
-       </ul>
+        <div class="logo" tabindex="0">S.K. Metals</div>
+        <div class="menu-toggle" aria-label="Toggle Menu" tabindex="0">&#9776;</div>
+        <ul role="menu" class="nav-links">
+          <li role="menuitem"><a href="index.html">Home</a></li>
+          <li role="menuitem"><a href="about.html">About-us</a></li>
+          <li role="menuitem"><a href="our-works.html">Our work</a></li>
+          <li role="menuitem"><a href="certification.html">Certification</a></li>
+          <li role="menuitem"><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
-
     </div>
   </header>
-  <div class="container">
-    <img src="image/about.PNG" alt="S.K. Metal Logo" class="logo" />
-    <h1>About S.K. Metal</h1>
-    <p><strong>Established in 1993</strong>, S.K. Metal is a reputed steel fabrication vendor specializing in tensile structures, lightweight structures, interiors, exhibitions, and architectural metalwork.</p>
-    <p>Based out of our private workshop in <strong>Noida, U.P.</strong>, we have successfully delivered fabrication projects across India and internationally — including in the <strong>UK, USA, and Copenhagen</strong>.</p>
-    <p>We provide end-to-end solutions including design detailing, fabrication, and onsite installation, with a focus on quality, reliability, and innovation.</p>
-    <p><strong>Address:</strong> C-221, Sec-22, Noida – 201301</p>
-    <p><strong>Phone:</strong> +91 98106 53245</p>
-  </div>
+
+  <main>
+    <div class="about-container">
+      <img src="image/about.PNG" alt="S.K. Metal Logo" class="logo-img" />
+      <h1>About S.K. Metal</h1>
+      <p><strong>Established in 1993</strong>, S.K. Metal is a reputed steel fabrication vendor specializing in tensile structures, lightweight structures, interiors, exhibitions, and architectural metalwork.</p>
+      <p>Based out of our private workshop in <strong>Noida, U.P.</strong>, we have successfully delivered fabrication projects across India and internationally — including in the <strong>UK, USA, and Copenhagen</strong>.</p>
+      <p>We provide end-to-end solutions including design detailing, fabrication, and onsite installation, with a focus on quality, reliability, and innovation.</p>
+      <p><strong>Address:</strong> C-221, Sec-22, Noida – 201301</p>
+      <p><strong>Phone:</strong> +91 98106 53245</p>
+    </div>
+  </main>
 
   <script>
-  const toggle = document.querySelector('.menu-toggle');
-  const menu = document.querySelector('.nav-links');
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
 
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('show');
-  });
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
 
-  menu.querySelectorAll('a').forEach(link =>
-    link.addEventListener('click', () => menu.classList.remove('show'))
-  );
-</script>
-
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => menu.classList.remove('show'))
+    );
+  </script>
 </body>
 </html>
