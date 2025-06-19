@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SK Metal Project Showcase</title>
+  <link rel="icon" href="image/favicon.webp" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -33,7 +34,7 @@
 
     header {
       background: var(--primary-color);
-      padding: 20px;
+      padding: 12px 0; /* ✅ thinner navbar */
       position: sticky;
       top: 0;
       z-index: 100;
@@ -51,6 +52,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      min-height: 60px; /* ✅ ensure consistent alignment */
       position: relative;
     }
 
@@ -177,8 +179,7 @@
       </nav>
     </div>
   </header>
-
-  <div class="container">
+<div class="container">
     <section class="half-section">
       <div class="half-image">
         <img src="image/sawhey.PNG" alt="Sawhney Farm – Residential" />
@@ -381,7 +382,6 @@
   </div>
 
   </div>
-
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const menu = document.querySelector('.nav-links');
