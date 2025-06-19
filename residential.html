@@ -2,105 +2,227 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SK Metal Project Showcase</title>
   <style>
-  .half-section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    background: #fff;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-  .half-image,
-  .half-text {
-    flex: 1 1 50%;
-    min-width: 300px;
-  }
-
-  .half-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .half-text {
-    padding: 30px;
-    background: #f9fafb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .half-text h2 {
-    color: #065f46;
-    margin-bottom: 12px;
-    font-size: 1.8rem;
-  }
-
-  .half-text p {
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: #333;
-  }
-
-  @media (max-width: 768px) {
-    .half-section {
-      flex-direction: column;
+    :root {
+      --primary-color: #10b981;
+      --secondary-color: #064e3b;
+      --bg-color: #f9fafb;
+      --text-color: #111827;
+      --heading-color: #065f46;
+      --border-radius: 12px;
+      --max-width: 1100px;
+      --shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
     }
-  }
-</style>
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary-color);
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    nav .logo {
+      font-weight: 600;
+      font-size: 1.8rem;
+      color: white;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.25s ease;
+    }
+
+    nav ul li a:hover {
+      background: var(--secondary-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 768px) {
+      nav ul.nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--primary-color);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 160px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        padding: 12px 0;
+      }
+
+      nav ul.nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .half-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      background: #fff;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .half-image,
+    .half-text {
+      flex: 1 1 50%;
+      min-width: 300px;
+    }
+
+    .half-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .half-text {
+      padding: 30px;
+      background: #f9fafb;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .half-text h2 {
+      color: var(--heading-color);
+      margin-bottom: 12px;
+      font-size: 1.8rem;
+    }
+
+    .half-text p {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .half-section {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Primary Navigation">
+        <div class="logo" tabindex="0">S.K. Metals</div>
+        <div class="menu-toggle" aria-label="Toggle Menu" tabindex="0">&#9776;</div>
+        <ul role="menu" class="nav-links">
+          <li role="menuitem"><a href="index.html">Home</a></li>
+          <li role="menuitem"><a href="about.html">About-us</a></li>
+          <li role="menuitem"><a href="our-works.html">Our Work</a></li>
+          <li role="menuitem"><a href="certification.html">Certification</a></li>
+          <li role="menuitem"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <div class="container">
-    
+    <section class="half-section">
+      <div class="half-image">
+        <img src="image/sawhey.PNG" alt="Sawhney Farm – Residential" />
+      </div>
+      <div class="half-text">
+        <h2>Sawhney Farm – Residential</h2>
+        <p><strong>Client:</strong> Mr. Surinder Sawhney</p>
+        <p><strong>Location:</strong> Sultanpur, Delhi</p>
+        <p><strong>Area:</strong> 12000 sq.ft. (200 M.Ton)</p>
+        <p><strong>Scope:</strong><br>Civil structure, staircases, corridors</p>
+        <p><strong>Architect:</strong> Matra Architects</p>
+        <p><strong>Year:</strong> 2015–2016</p>
+      </div>
+    </section>
 
-<section class="half-section">
-    <div class="half-image">
-    <img src="image/sawhey.PNG" alt="Sawhney Farm – Residential">
-  </div>
-  <div class="half-text">
-    <h2>Sawhney Farm – Residential</h2>
-    <p><strong>Client:</strong> Mr. Surinder Sawhney</p>
-    <p><strong>Location:</strong> Sultanpur, Delhi</p>
-    <p><strong>Area:</strong> 12000 sq.ft. (200 M.Ton)</p>
-    <p><strong>Scope:</strong><br>Civil structure, staircases, corridors</p>
-    <p><strong>Architect:</strong> Matra Architects</p>
-    <p><strong>Year:</strong> 2015–2016</p>
-  </div>
+    <section class="half-section">
+      <div class="half-image">
+        <img src="image/kaleka.PNG" alt="Kaleka House – Residential" />
+      </div>
+      <div class="half-text">
+        <h2>Kaleka House – Residential</h2>
+        <p><strong>Client:</strong> Mr. & Mrs. Kaleka</p>
+        <p><strong>Location:</strong> Greater Noida</p>
+        <p><strong>Scope:</strong><br>Metal staircase, doors, railings, fixed windows</p>
+        <p><strong>Architect:</strong> Matra Architects</p>
+        <p><strong>Year:</strong> 2014</p>
+      </div>
+    </section>
 
+    <section class="half-section">
+      <div class="half-image">
+        <img src="image/Bhardwaj.PNG" alt="Bhardwaj Residence – Residential" />
+      </div>
+      <div class="half-text">
+        <h2>Bhardwaj Residence – Residential</h2>
+        <p><strong>Client:</strong> Mr. & Mrs. Bhardwaj</p>
+        <p><strong>Location:</strong> Lakeside Udaipur</p>
+        <p><strong>Scope:</strong><br>Gate, boundary, staircase, metal screens, metal doors</p>
+        <p><strong>Architect:</strong> Matra Architects</p>
+        <p><strong>Year:</strong> 2015–2016</p>
+      </div>
+    </section>
 
-<section class="half-section">
-  <div class="half-image">
-    <img src="image/kaleka.PNG" alt="Kaleka House – Residential">
-  </div>
-  <div class="half-text">
-    <h2>Kaleka House – Residential</h2>
-    <p><strong>Client:</strong> Mr. & Mrs. Kaleka</p>
-    <p><strong>Location:</strong> Greater Noida</p>
-    <p><strong>Scope:</strong><br>Metal staircase, doors, railings, fixed windows</p>
-    <p><strong>Architect:</strong> Matra Architects</p>
-    <p><strong>Year:</strong> 2014</p>
-  </div>
-<section class="half-section">
-  <div class="half-image">
-    <img src="image/Bhardwaj.PNG" alt="Bhardwaj Residence – Residential">
-  </div>
-  <div class="half-text">
-    <h2>Bhardwaj Residence – Residential</h2>
-    <p><strong>Client:</strong> Mr. & Mrs. Bhardwaj</p>
-    <p><strong>Location:</strong> Lakeside Udaipur</p>
-    <p><strong>Scope:</strong><br>Gate, boundary, staircase, metal screens, metal doors</p>
-    <p><strong>Architect:</strong> Matra Architects</p>
-    <p><strong>Year:</strong> 2015–2016</p>
-  </div>
-
-
-<section class="half-section">
+    <section class="half-section">
   <div class="half-image">
     <img src="image/jenga.PNG" alt="Jenga House – Residential">
   </div>
@@ -257,6 +379,20 @@
     <p><strong>Scope:</strong> Two boat type structure</p>
     <p><strong>Year:</strong> 2014</p>
   </div>
+
   </div>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+    });
+
+    menu.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', () => menu.classList.remove('show'))
+    );
+  </script>
 </body>
 </html>
