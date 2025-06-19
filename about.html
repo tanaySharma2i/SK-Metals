@@ -57,10 +57,81 @@
       margin: 0 auto 30px;
       width: 180px;
     }
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  user-select: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    width: 200px;
+    padding: 12px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
   </style>
 </head>
 
 <body>
+  <header>
+    <div class="container">
+      <nav role="navigation" aria-label="Primary Navigation">
+       <div class="logo" tabindex="0">S.K. Metals</div>
+       <div class="menu-toggle" aria-label="Toggle Menu" tabindex="0">&#9776;</div>
+       <ul role="menu" class="nav-links">
+        <li role="menuitem"><a href="#home">Home</a></li>
+        <li role="menuitem"><a href="#contact">Contact</a></li>
+        <li role="menuitem"><a href="about.html">About-us</a></li>
+        <li role="menuitem"><a href="our-works.html">Our work</a></li>
+        <li role="menuitem"><a href="certification.html">Certification</a></li> 
+       </ul>
+      </nav>
+
+    </div>
+  </header>
   <div class="container">
     <img src="image/about.PNG" alt="S.K. Metal Logo" class="logo" />
     <h1>About S.K. Metal</h1>
@@ -70,4 +141,19 @@
     <p><strong>Address:</strong> C-221, Sec-22, Noida – 201301</p>
     <p><strong>Phone:</strong> +91 98106 53245</p>
   </div>
+
+  <script>
+  const toggle = document.querySelector('.menu-toggle');
+  const menu = document.querySelector('.nav-links');
+
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('show');
+  });
+
+  menu.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => menu.classList.remove('show'))
+  );
+</script>
+
 </body>
+</html>
