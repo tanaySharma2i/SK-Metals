@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Works - S.K. Metals</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    :root {
+      --primary-color: #10b981;
+      --secondary-color: #064e3b;
+      --bg-color: #f9fafb;
+      --text-color: #111827;
+      --border-radius: 12px;
+      --shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+    }
+
+    img {
+      max-width: 67%;
+      height: auto;
+      margin-bottom: 30px;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+    }
+
+    .btn {
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 28px;
+      margin: 10px;
+      border: none;
+      border-radius: var(--border-radius);
+      font-weight: 600;
+      font-size: 1rem;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: var(--secondary-color);
+      box-shadow: 0 6px 20px rgba(6, 78, 59, 0.4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/54eb5d7c-809c-47d0-8967-d1714251a743.png" alt="S.K. Metals fabrication work" />
+    <a href="commercial.html" class="btn">Our Commercial Works</a>
+    <a href="residential.html" class="btn">Our Residential Works</a>
+  </div>
+</body>
+</html>
